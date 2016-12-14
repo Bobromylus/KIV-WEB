@@ -48,11 +48,11 @@ $p = @$_REQUEST["p"];
 switch ($p) {
     case "":
         $filename = "view/uvod.inc.php";
-        $template = $twig->loadTemplate('page.htm');
+        $template = $twig->loadTemplate('home.htm');
         break;
     case "uvod":
         $filename = "view/uvod.inc.php";
-        $template = $twig->loadTemplate('page.htm');
+        $template = $twig->loadTemplate('home.htm');
         break;
     case "admin":
         $filename = "view/admin/admin.inc.php";

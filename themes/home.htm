@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="cs">
+
+<head>
+    <title>WPress</title>
+    <meta charset="utf-8">
+    <!-- <meta http-equiv='X-UA-Compatible' content='IE=edge'> -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="themes/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="themes/css/page.css">
+</head>
+
+<body>
+    <div id="container">
+        {{ include('navigation.htm') }}
+
+        <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#bs-carousel" data-slide-to="1"></li>
+                <li data-target="#bs-carousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item slides active">
+                    <div class="slide-1"></div>
+                    <div class="hero">
+                        <h1>Jsme Kreativni</h1>
+                        <h3>Naše konference vás nezklame</h3>
+                        <a class="btn btn-hero btn-lg" href="?p=posts">Podivej se na články</a>
+                    </div>
+                </div>
+                <div class="item slides">
+                    <div class="slide-2"></div>
+                    <div class="hero">
+                        <h1>Jsme Chytří</h1>
+                        <h3>Naše konference vás nezklame</h3>
+                        <a class="btn btn-hero btn-lg" href="?p=posts">Podivej se na články</a>
+                    </div>
+                </div>
+                <div class="item slides">
+                    <div class="slide-3"></div>
+                    <div class="hero">
+                        <h1>Jsme Úžasní</h1>
+                        <h3>Naše konference vás nezklame</h3>
+                        <a class="btn btn-hero btn-lg" href="?p=posts">Podivej se na články</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="body">
+
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <header>
+                        <h1 {{ nadpis1atribut | raw }}>{{ nadpis1 }}</h1>
+                        <h2><small>{{ nadpis2 }}</small></h2>
+                    </header>
+                    <article>
+                        <div>
+                            {{ obsah | raw }}
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+        {{ include('footer.htm') }}
+
+    </div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>
