@@ -19,7 +19,7 @@ if (isset($_SESSION['user'])) {
                     $title   = $_POST['title'];
                     $text    = $_POST['posttext'];
                     
-                    $file      = rand(1000, 100000) . "-" . $_FILES['filePDF']['title'];
+                    $file      = rand(1000, 100000) . "-" .$_SESSION['user']['id'] . "-" . $_POST['title']".pdf";
                     $file_loc  = $_FILES['filePDF']['tmp_name'];
                     $file_size = $_FILES['filePDF']['size'];
                     $file_type = $_FILES['filePDF']['type'];
