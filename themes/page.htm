@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="cs">
+<head>
+    <title>WPress</title>
+    <meta charset="utf-8">
+    <!-- <meta http-equiv='X-UA-Compatible' content='IE=edge'> -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="themes/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="themes/css/page.css">
+</head>
+
+<body>
+    <div id="container">
+        {{ include('navigation.htm') }}
+        <div class="container" id="body">
+
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <header>
+                        <h1 {{ nadpis1atribut | raw }}>{{ nadpis1 }}</h1>
+                        <h2><small>{{ nadpis2 }}</small></h2>
+                    </header>
+                    <article>
+                        <div>
+                            {{ obsah | raw }}
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+        {{ include('footer.htm') }}
+
+    </div>
+    </div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>

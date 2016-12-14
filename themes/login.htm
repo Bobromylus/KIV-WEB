@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="cs">
+<head>
+    <title>Wpress</title>
+    <meta charset="utf-8">
+    <!-- <meta http-equiv='X-UA-Compatible' content='IE=edge'> -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="themes/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="themes/css/page.css">
+
+</head>
+
+<body class="bglog">
+    <div id="container" id="body">
+        {{ include('navigation.htm') }}
+        <div class="container">
+
+
+            <div class="row">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
+                            <div class="panel panel-login">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            {{ obsah | raw }}
+                                            <form id='login-form' method='post' role='form' style='display: block;'>
+                                                <header>
+                                                    <h2>PŘIHLÁŠENÍ</h2></header>
+                                                <div class='form-group'>
+                                                    <input type='hidden' name='action' value='login_go' />
+                                                    <input type='text' name='username' id='username' tabindex='1' class='form-control' placeholder='Uživatelské jméno' value='' required="">
+                                                </div>
+                                                <div class='form-group'>
+                                                    <input type='password' name='passwordl' id='passwordl' tabindex='2' class='form-control' placeholder='Heslo' required="">
+                                                </div>
+                                                <div class='col-sm-6 col-sm-offset-3'>
+                                                    <input type='submit' name='login' id='login-submit' tabindex='4' class='form-control btn btn-default btn-lg' value='PŘIHLÁSIT SE'>
+                                                </div>
+                                            </form>
+                                            <form id='register-form' method='post' role='form' style='display: none;'>
+                                                <header>
+                                                    <h2>REGISTRACE</h2></header>
+                                                <div class='form-group'>
+                                                    <input type='hidden' name='action' value='reg_go' />
+                                                    <input type='text' name='username' id='username' tabindex='1' class='form-control' placeholder='Uživatelské jméno' value='' required="" pattern=".{5,}" required title="Minimálně 5 znaků" maxlength="20">
+                                                </div>
+                                                <div class='form-group'>
+                                                    <input type='email' name='email' id='email' tabindex='1' class='form-control' placeholder='Emailová adresa' value='' required="" maxlength="99">
+                                                </div>
+                                                <div class='form-group'>
+                                                    <input type='password' name='password' id='password' tabindex='2' class='form-control' placeholder='Heslo' required="" pattern=".{5,}" required title="Minimálně 5 znaků" maxlength="15">
+                                                </div>
+                                                <div class='form-group'>
+                                                    <input type='password' name='cpassword' id='confirm-password' tabindex='2' class='form-control' placeholder='Zopakujte heslo' required="" min="5">
+                                                </div>
+                                                <div class='form-group'>
+                                                    <div class='row'>
+                                                        <div class='col-sm-6 col-sm-offset-3'>
+                                                            <input type='submit' name='register-submit' id='register-submit' tabindex='4' class='form-control btn btn-default btn-lg' value='REGISTROVAT'>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-6 tabs">
+                                            <a href="#" class="active" id="login-form-link">
+                                                <div class="login">PŘIHLÁŠENÍ</div>
+                                            </a>
+                                        </div>
+                                        <div class="col-xs-6 tabs">
+                                            <a href="#" id="register-form-link">
+                                                <div class="register">REGISTRACE</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ include('footer.htm') }}
+    </div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- validator -->
+    <script type="text/javascript" src="themes/vendors/validator/validator.js"></script>
+
+    <script>
+        $(function () {
+            $('#login-form-link').click(function (e) {
+                $("#login-form").delay(100).fadeIn(100);
+                $("#register-form").fadeOut(100);
+                $('#register-form-link').removeClass('active');
+                $(this).addClass('active');
+                e.preventDefault();
+            });
+            $('#register-form-link').click(function (e) {
+                $("#register-form").delay(100).fadeIn(100);
+                $("#login-form").fadeOut(100);
+                $('#login-form-link').removeClass('active');
+                $(this).addClass('active');
+                e.preventDefault();
+            });
+
+        });
+    </script>
+    <script>
+        var password = document.getElementById("password"),
+            confirm_password = document.getElementById("confirm-password");
+
+        function validatePassword() {
+            if (password.value != confirm_password.value) {
+                confirm_password.setCustomValidity("Hesla jsou rozdílná");
+            } else {
+                confirm_password.setCustomValidity('');
+            }
+        }
+
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
+    </script>
+</body>
+
+</html>

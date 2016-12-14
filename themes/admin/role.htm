@@ -1,0 +1,88 @@
+{{ include('admin/navigation.htm') }}
+<!-- page content -->
+<div class="right_col" role="main">
+    <div class="">
+        <div class="page-title">
+            <div class="title_left">
+                <h3>Upravit roli uživateli <small>{{ userroleedit }}</small></h3>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <form id='editroleform' method='post' role='form'>
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Role</h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="x_content">
+                                {{ obsah | raw }}
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Vyberte roli</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                        <input type='hidden' name='action' value='editrole' />
+                                        <select class="select2_single form-control" name="role" tabindex="-1" required="">
+                                            <option></option>
+                                            {{ roleopt | raw }}
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <input type='submit' name='editrolebut' id='editrolebut' tabindex='4' class=' btn btn-primary' value='Upravit roli'>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /page content -->
+</div>
+</div>
+
+</div>
+</div></div>
+<footer>
+    <div class="pull-right">
+
+    </div>
+    <div class="clearfix"></div>
+</footer>
+<!-- jQuery -->
+<script src="themes/vendors/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="themes/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="themes/vendors/fastclick/lib/fastclick.js"></script>
+<!-- NProgress -->
+<script src="themes/vendors/nprogress/nprogress.js"></script>
+<!-- bootstrap-progressbar -->
+<script src="themes/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+<!-- Select2 -->
+<script src="themes/vendors/select2/dist/js/select2.full.min.js"></script>
+<!-- Select2 -->
+<script>
+    $(document).ready(function () {
+        $(".select2_single").select2({
+            placeholder: "Vyberte roli pro {{ userroleedit }}",
+            allowClear: false
+        });
+    });
+</script>
+<!-- /Select2 -->
+
+<!-- Custom Theme Scripts -->
+<script src="themes/build/js/custom.min.js"></script>
+</body>
+
+</html>
