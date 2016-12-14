@@ -138,8 +138,8 @@ $view = phpWrapperFromFile($filename);
 //stranky v menu
 
 $pages          = array();
-$pages['uvod']  = "Úvod";
-$pages['posts'] = "Příspěvky";
+$pages['uvod']  = "<i class='fa fa-home' aria-hidden='true'></i>Úvod";
+$pages['posts'] = "<i class='fa fa-newspaper-o' aria-hidden='true'></i>Příspěvky";
 
 
 // menu
@@ -160,13 +160,13 @@ if ($pages != null) {
 $menu .= "</ul><ul class='nav navbar-nav navbar-right' id='usermenu'>";
 // login/reg / uživatelské menu
 if (isset($_SESSION['user'])) {
-    $menu .= "<li><p class='navbar-text'>Přihlášen jako ";
+    $menu .= "<li><p class='navbar-text'><i class='fa fa-user' aria-hidden='true'></i>  Přihlášen jako ";
     $menu .= $_SESSION['user']['login'];
     $menu .= "</p></li>";
-    $menu .= "<li><a href='index.php?p=admin'>Administrace</a></li>";
-    $menu .= "<li><a href='index.php?p=logout'>Odhlásit</a></li>";
+    $menu .= "<li><a href='index.php?p=admin'><i class='fa fa-shield' aria-hidden='true'></i>Administrace</a></li>";
+    $menu .= "<li><a href='index.php?p=logout'>Odhlásit <i class='fa fa-sign-out' aria-hidden='true'></i></a></li>";
 } else {
-    $menu .= "<li><a href='index.php?p=login'>Login/Registrace</a></li>";
+    $menu .= "<li><a href='index.php?p=login'><i class='fa fa-lock' aria-hidden='true'></i>Login/Registrace</a></li>";
 }
 $menu .= "</ul>";
 
