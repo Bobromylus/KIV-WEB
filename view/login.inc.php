@@ -9,7 +9,7 @@ if (isset($_POST['action'])) {
     //pokud přijde login 
     if ($action == "login_go") {
         //získání z formuláře a připojení do db
-        $username = $_POST['username'];
+        $username = $_POST['name'];
         $password = $_POST['passwordl'];
         $login    = new users();
         $login->Connect();

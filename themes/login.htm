@@ -12,7 +12,7 @@
 </head>
 
 <body class="bglog">
-    <div id="container" id="body">
+    <div id="container">
         {{ include('navigation.htm') }}
         <div class="container">
 
@@ -31,7 +31,7 @@
                                                     <h2>PŘIHLÁŠENÍ</h2></header>
                                                 <div class='form-group'>
                                                     <input type='hidden' name='action' value='login_go' />
-                                                    <input type='text' name='username' id='username' tabindex='1' class='form-control' placeholder='Uživatelské jméno' value='' required="">
+                                                    <input type='text' name='name' id='name' tabindex='1' class='form-control' placeholder='Uživatelské jméno' value='' required="">
                                                 </div>
                                                 <div class='form-group'>
                                                     <input type='password' name='passwordl' id='passwordl' tabindex='2' class='form-control' placeholder='Heslo' required="">
@@ -45,16 +45,16 @@
                                                     <h2>REGISTRACE</h2></header>
                                                 <div class='form-group'>
                                                     <input type='hidden' name='action' value='reg_go' />
-                                                    <input type='text' name='username' id='username' tabindex='1' class='form-control' placeholder='Uživatelské jméno' value='' required="" pattern=".{5,}" required title="Minimálně 5 znaků" maxlength="20">
+                                                    <input type='text' name='username' id='username' tabindex='1' class='form-control' placeholder='Uživatelské jméno' value='' required="" pattern=".{5,}" title="Minimálně 5 znaků" maxlength="20">
                                                 </div>
                                                 <div class='form-group'>
                                                     <input type='email' name='email' id='email' tabindex='1' class='form-control' placeholder='Emailová adresa' value='' required="" maxlength="99">
                                                 </div>
                                                 <div class='form-group'>
-                                                    <input type='password' name='password' id='password' tabindex='2' class='form-control' placeholder='Heslo' required="" pattern=".{5,}" required title="Minimálně 5 znaků" maxlength="15">
+                                                    <input type='password' name='password' id='password' tabindex='2' class='form-control' placeholder='Heslo' required="" pattern=".{5,}" title="Minimálně 5 znaků" maxlength="15">
                                                 </div>
                                                 <div class='form-group'>
-                                                    <input type='password' name='cpassword' id='confirm-password' tabindex='2' class='form-control' placeholder='Zopakujte heslo' required="" min="5">
+                                                    <input type='password' name='cpassword' id='confirm-password' tabindex='2' class='form-control' placeholder='Zopakujte heslo'>
                                                 </div>
                                                 <div class='form-group'>
                                                     <div class='row'>
@@ -92,9 +92,7 @@
     </div>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- validator -->
-    <script type="text/javascript" src="themes/vendors/validator/validator.js"></script>
-
+    
     <script>
         $(function () {
             $('#login-form-link').click(function (e) {
